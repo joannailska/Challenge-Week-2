@@ -8,7 +8,7 @@ The person with the best idea will host the meet!
 Arjan
 Task: Estimate the number of rabbits in a population after 10 years
 --a newly born pair of rabbits, one male, one female, build the initial population
---at the end of its second month a female can bring forth another pair of rabbits
+--at the end of its second month a female can bring forth another pair of rabbits - and each month thereafter
 --these rabbits are immortal (easy) OR rabbits die at 1 year of age (harder)
 -- mating pair always produces one new pair (one male, one female) every month from the second month onwards
 Why? this is a simple concept: can we translate it into code? 
