@@ -7,7 +7,7 @@ The person with the best idea will host the meet!
 
 
 Arjan
-Task: Simulate the number of rabbits in a population after 10 generations
+Task: Estimate the number of rabbits in a population after 10 years
 given a starting number, an age of having offspring and a number of offspring.(assume rabbits are immortal)
 Extra: Rabbits aren't immortal silly! Rabbits die at age y, update your code!
 Why? this is a simple concept in biology: can we translate it into code? 
