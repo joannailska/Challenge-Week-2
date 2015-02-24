@@ -1,0 +1,13 @@
+This is the file where we'll collect ideas for next weeks challenge! Please enter ideas in the following format. O
+Name
+This is my idea and it's great because reasons i have!
+Once we have enough (I hope you all can think of one! Please append the file with a an exclamation (!) mark, we'll count these
+to decide the winner. 
+The person with the best idea will host the meet! 
+
+
+Arjan
+Task: Simulate the number of rabbits in a population after 10 generations
+given a starting number, an age of having offspring and a number of offspring.(assume rabbits are immortal)
+Extra: Rabbits aren't immortal silly! Rabbits die at age y, update your code!
+
