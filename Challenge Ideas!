@@ -34,5 +34,38 @@ already encountered it, e.g., logistic regression!).
 
 
 
+Suzanne
+
+Meeting notes: 
+
+Hi everyone. I really enjoyed the meeting this week and I think it’s 
+going to be useful. I think we need to focus the next meeting a bit 
+more so that everyone gets the most out of it.
+ 
+Rather than go through everybody’s code, I think a better use of time 
+would be for people to highlight any particular problems they had with 
+the challenge. Then we can find out who managed to solve that specific 
+problem, go through how they did it, and take suggestions on how it 
+could be improved. We can also share neat solutions to problems we 
+encountered. 
+
+I think this will focus the discussion and allow people (especially 
+those new to programming) to ask specific questions. It’s a bit overwhelming 
+to look at a wall of code you don’t understand!  
+
+Next challenge:
+
+My suggestion is waaay more boring than rise of the machines! :D I’m 
+personally keen to practice more data manipulation. I’m not suggesting 
+we do this exact thing, but if people are keen I can come up with 
+something along these lines. I recently did an analysis using SAS where 
+I standardised values around the mean, then took a subset of individuals 
+based on values in the top 10% for one trait, and graphed how values for 
+other traits compared in that subset. I understand if this makes people 
+want to go to sleep though : )  
+
+
+
+
 
 
