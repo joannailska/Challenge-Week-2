@@ -12,3 +12,23 @@ Task: Estimate the number of rabbits in a population after 10 years
 --these rabbits are immortal (easy) OR rabbits die at 1 year of age (harder)
 -- mating pair always produces one new pair (one male, one female) every month from the second month onwards
 Why? this is a simple concept: can we translate it into code? 
+
+Scott
+Task: Rise of the MACHINES -- Study a population of terminators over time.
+**Scenario 1** (a bit easier)
+-- Terminators are created by SKYNET at rate a
+-- Terminators are killed by humans at rate b
+AND/OR
+**Scenario 2** (a bit harder)
+-- Terminators are created by SKYNET at rate a
+-- Terminators are killed by humans at rate b
+-- Resources for the creation of Terminators is finite, i.e., Terminators have a carrying capacity K
+Why? Scenarios 1 and 2 are examples of simple exponential and logistic growth respectively, and form a basis for modelling
+in the fields of mathematical biology and epidemiology. I have chosen Terminators as a bit of fun but these ideas can be (and
+are) applied to many population and disease systems. If people are interested in coding this problem I can give a brief
+introduction to the models and their solution and we can look to write up some code in our chosen languages to solve such
+problems. The type of modelling used above can be applied to many fields from traffic flow to wound healing, and is used to
+study a multitude of problems in areas such as cancer growth and magnetohydrodynamics. Finally, the ideas involved in
+*scenario 2* also have applications in statistics and could potentially be useful in your own area of study (you may have
+already encountered it, e.g., logistic regression!).
+
