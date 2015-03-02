@@ -66,12 +66,21 @@ want to go to sleep though : )
 
 Alex. 
 
-You have 2 cows. Both are mad (not actually related to my idea but when I was thinking about how to explain it I thought of this http://washingtonnote.com/2_cows_economic/ which is joyful)
+You have 2 cows. Both are mad (not actually related to my idea but when I was 
+thinking about how to explain it I thought of this 
+http://washingtonnote.com/2_cows_economic/ which is joyful)
 
-You have 200(ish) cows of varying ages, with data on sex, date of birth, and 2 traits. You want to find out whether there has been genetic progress in your trait(s) of interest over time. Your data has dates of birth in it, but you only need Year of Birth. Extract this information from your data. Can you plot your trait in a way that separates the cows by year of birth? How do you quantify the level of progress (if any) in your trait over time?
+You have 200(ish) cows of varying ages, with data on sex, date of birth, and 2 
+traits. You want to find out whether there has been genetic progress in your trait(s) 
+of interest over time. Your data has dates of birth in it, but you only need Year of
+Birth. Extract this information from your data. Can you plot your trait in a way that 
+separates the cows by year of birth? How do you quantify the level of progress (if any) 
+in your trait over time?
 
-Why? This is again probably a lot simpler than some of the others, but again like Suzanne I think a lot of beginners will want more practice with data manipulation. This is a pretty boring work related task but is the sort of thing that you might
-want to look at at the beginning of a genetic analysis?
+Why? This is again probably a lot simpler than some of the others, but again like Suzanne 
+I think a lot of beginners will want more practice with data manipulation. This is a pretty 
+boring work related task but is the sort of thing that you might want to look at at the 
+beginning of a genetic analysis?
 
 
 
