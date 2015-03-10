@@ -1,0 +1,23 @@
+Created a new column called "Year"  and used the function "=YEAR()" in excel
+Read the data in as a .txt file in R
+data<-read.table("week2.txt",header=T,sep='\t')
+
+#exclude missing values
+newdata <- na.omit(week2)
+
+#remove columns without information, data with complete information
+week2[!complete.cases(week2),]
+> newdata <- na.omit(week2)
+View(newdata)
+> summary(newdata)
+
+#subset the newdata to show each trait per year
+Year15<-subset(newdata,newdata$Year=="2015")
+>View(Year15)
+
+There will be an easier way of doing this. Teach me:)
+
+
+
+ 
+
