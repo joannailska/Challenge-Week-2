@@ -1,0 +1,55 @@
+setwd("H:/SRUCProgrammers")
+cows<-read.table("week2data.txt",header=T, sep=',')
+
+#line 73 has an issue
+cows<-readLines("week2data.txt")
+
+#there's a hash in the line 73 date, and a couple of others. Replacing with 00
+
+cows1<-as.data.frame(cows, header=T)
+cows1[cows1=="#"]<-00
+
+#thats what I would usually use but it doesn't work, so i'm pinching seb's gsub from last week
+
+cows1<-gsub("#", "00", cows)
+cat(cows1, sep="\n", file="week2_clean.txt")
+cows2<-read.table("week2_clean.txt", header=T, sep=',', stringsAsFactors = FALSE)
+str(cows2) #this gives you the data types for all columns in your data frame, I like it!
+View(cows2) #found this today, it makes nice tables in a new window for you to have a look at your data
+
+#theres are still missing values, arrrgghh!
+
+cows2[cows2=="*"]<-NA
+cows2$Trait_1<-as.numeric(cows2$Trait_1)
+cows2$Trait_2<-as.numeric(cows2$Trait_2)
+cows2$DOB<-format(cows2$DOB, format="%d %m %Y")
+
+#I want to select last 4 characters from DOB to get YOB, had to google this, installing new package stringi to get 
+a function to help me
+
+library(stringi)
+cows2$YOB<-stri_sub(cows2$DOB,-4,-1) # this gets the last 4 characters
+View(cows2$YOB)
+
+#theres still something wrong with my dates but i don't have time to figure out a fix just now (twenty past 1 and have had no lunch!) so will just change the dodgy ones to NA?
+
+cows2[cows2=="8/00/2002 "]<-NA
+cows2[cows2=="1/00/2008 "]<-NA
+cows2$YOB<-stri_sub(cows2$DOB,-4,-1)
+cows2$YOB<-as.integer(cows2$YOB) # YOB needs to be an integer or numeric for the graphs to work
+
+library(ggplot2)
+ggplot(cows2, aes(x=Trait_1, y=YOB))+geom_point(shape=1)+
+geom_smooth(method=lm, se=FALSE)  # Add linear regression line
+
+#I set the questions but I don't know how to actually quantify progress, but I did a linear model and an ANOVA to see if it was significant
+
+fit<-lm(cows2$Trait_1~cows2$YOB)
+View(anova(fit))              
+
+#same for trait 2 as for trait 1
+
+ggplot(cows2, aes(x=Trait_2, y=YOB))+geom_point(shape=1)+
+geom_smooth(method=lm, se=FALSE)  # Add linear regression line
+fit<-lm(cows2$Trait_2~cows2$YOB)    
+View(anova(fit))
