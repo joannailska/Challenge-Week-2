@@ -1,0 +1,33 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from datetime import datetime
+from pylab import *
+import matplotlib.pyplot as plt
+list=[]
+data = pd.read_csv('C:\Users\Atolkamp\week2data.txt', parse_dates=[2], na_values='*', keep_default_na=0, dayfirst=1 )
+
+
+##Calculating Means of columns is easy with pandas dataframes
+print "Mean value for Trait 1:", data["Trait_1"].mean()
+
+###Here i extract year information from the date column. 
+for index, row in data.iterrows():
+    if row['DOB'] == 'nan':
+        print 'Null value found'
+        list.append('nan')
+    else:
+        list.append((row['DOB']).split('/')[2])
+        
+###Adding columns is easy using pandas, just say dataframe['colname'] = List or array (must be the right size)
+data['BIRTHDATE'] = list
+
+### Can Easily create subsets of data, like selecting from SQL table
+### Selecting all data with birthdate 2001 and sex 1
+DF2001 = data[(data['BIRTHDATE'] == '2001') & (data['Sex'] ==1)]
+
+### extract some info and graph
+y = (data['Trait_1']).tolist()
+x = (data['BIRTHDATE']).tolist()
+
+pylab.plot(x,y,'v')
