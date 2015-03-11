@@ -1,0 +1,107 @@
+# Challenge-Week-2
+# All lines with a '#' in front are comments
+
+Week 2 challenge scheduled for 10th march
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy.stats import linregress
+# Read in the file, omitting the first row (header)
+
+
+f=open("C:\\Users\\jilska\\desktop\\WORK\\SRUCprogrammers\\Challenge2.csv", 'r').readlines()[1:]
+
+# Extract trait values, replacing the non-numerical data with missing value ('NAN')
+trait1=[]
+trait2=[]
+for each in f:
+    tmp=each.strip().split(',')
+    try:
+        trait1.append(float(tmp[3]))
+    except ValueError:
+        trait1.append('NAN')
+        
+for each in f:
+    tmp=each.strip().split(',')
+    try:
+        trait2.append(float(tmp[4]))
+    except ValueError:
+        trait2.append('NAN')        
+
+
+# Split the date into day, month, year, and extract year where possible, otherwise give a missing value (NAN)
+date=[x.strip().split(',')[2] for x in f]          
+year=[]
+for each in date:
+    y=each.split('/')
+    try:
+        year.append(y[2])
+    except IndexError:
+        year.append('NAN')
+
+# Remove the entries where the date, or the trait value are missing
+new_t1=[]
+new_t2=[]
+new_year1=[]
+new_year2=[]
+
+for a,b in zip(year,trait1):
+    if a!='NAN' and b!='NAN':
+        new_t1.append(float(b))
+        new_year1.append(float(a))
+    else:
+        pass
+        
+for a,b in zip(year, trait2):
+    if a!='NAN' and b!='NAN':
+        new_t2.append(float(b))
+        new_year2.append(float(a))
+    else:
+        pass
+
+# Turn the list into an array
+n_t1=np.array(new_t1)
+n_y1=np.array(new_year1)  
+
+n_t2=np.array(new_t2)
+n_y2=np.array(new_year2)      
+        
+# Linear Regression for trait 1
+slope1, intercept1, r_value1, p_value1, std_err1=linregress(n_y1,n_t1)
+# Round up the values
+r_slope1="%.2f" % slope1
+r_intercept1="%.2f" % intercept1
+r_SE1="%.2f" % std_err1
+
+# Linear Regression for trait 2
+slope2, intercept2, r_value2, p_value2, std_err2=linregress(n_y2,n_t2)
+r_slope2="%.2f" % slope2
+r_intercept2="%.2f" % intercept2
+r_SE2="%.2f" % std_err2
+
+# Plot the results, first create a figure
+fig=plt.figure()
+
+# Specify there will be two plots on the figure
+ax=fig.add_subplot(211)
+
+# Create the plot for trait 1
+ax.set_title("Changes in Trait 1 over time")             # title
+ax.plot(n_y1, n_t1, 'o')                                 # plot the values
+ax.plot(n_y1, slope1*n_y1+intercept1, '-')               # plot the regression line
+ax.text(2000.5,5, "t1={0}*year+({1})\nSE={2}".format(r_slope1, r_intercept1, r_SE1))       # add text giving the regression equation
+ax.set_ylabel("Trait 1 Values")
+
+# Create the plot for trait 2
+ax2=fig.add_subplot(212)
+
+ax2.set_title("Changes in Trait 2 over time")
+
+ax2.plot(n_y2, n_t2, 'o')
+ax2.plot(n_y2, slope2*n_y2+intercept2, '-')
+ax2.text(2000.5,65, "t1={0}*year+({1})\nSE={2}".format(r_slope2, r_intercept2, r_SE2))
+ax2.set_xlabel("Years")
+ax2.set_ylabel("Trait 2 values")
+# Save the figure to a file
+plt.savefig("C:\\Users\\jilska\\Desktop\\WORK\\SRUCprogrammers\\CH2_fig.jpg")
+plt.show()
+#plt.clf()
